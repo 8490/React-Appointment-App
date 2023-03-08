@@ -12,6 +12,7 @@ export function AddModal({
 }) {
   const [patientName, setPatientName] = useState("");
   const [date, setDate] = useState("");
+  const [newId, setNewId] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
