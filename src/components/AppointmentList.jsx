@@ -36,17 +36,17 @@ const AppointmentList = ({ appointments, setAppointments }) => {
             onDoubleClick={() => handleDoubleClick(id)}
           >
             <Row>
-              <Col>
+              <Col xs={12} sm={12} md={6}>
                 <h4>{patient}</h4>
                 <h5>{doctor}</h5>
               </Col>
-              <Col>
-                <h6>{new Date(day).toLocaleDateString()}</h6>
-                <h6>{new Date(day).toLocaleTimeString()}</h6>
+              <Col xs={10} sm={8} md={5}>
+                <h6>Date: {new Date(day).toLocaleDateString()}</h6>
+                <h6>Time: {new Date(day).toLocaleTimeString()}</h6>
               </Col>
-              <Col>
+              <Col xs={2} sm={4} md={1} className="text-end">
                 <FaTimesCircle
-                  className="text-danger fs-3"
+                  className="text-danger fs-3 ml-auto"
                   type="button"
                   onClick={() => handleDelete(id)}
                 />

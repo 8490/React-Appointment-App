@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { v4 as uuid } from "uuid";
 
 export function AddModal({
   show,
@@ -12,14 +13,15 @@ export function AddModal({
 }) {
   const [patientName, setPatientName] = useState("");
   const [date, setDate] = useState("");
-  const [newId, setNewId] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const unique_id = uuid();
+    const small_id = unique_id.slice(0, 8);
     setAppointments([
       ...appointments,
       {
-        id: appointments.length + 1,
+        id: small_id,
         patient: patientName,
         day: date,
         consulted: false,
